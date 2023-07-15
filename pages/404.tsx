@@ -1,6 +1,5 @@
 import React from "react";
-import { MyPage } from "~/Components/Common/types";
-const Custom404: MyPage = () => {
+const Custom404 = () => {
         return (
                 <div className="container">
                         <div className="grid place-content-center min-h-screen">

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
 
-import { Wrapper as PopperWrapper } from '~/pages/components/Popper';
+import { Wrapper as PopperWrapper } from '../../popper';
 import LanguageItem from './LanguageItem';
 import Header from './Header';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ const defaultFn = () => { };
 
 function Language({ children, items = [], hideOnClick = false, onChange = defaultFn }: any) {
         const [history, setHistory] = useState([{ data: items }]);
-        const current = history[history.length - 1];
+        const current: any = history[history.length - 1];
 
         const renderItems = () => {
                 return current.data.map((item: any, index: any) => {

@@ -27,23 +27,36 @@ body {
 }
        
 .container{
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
 }
-
+.blogapp{
+  width: 800px;
+  margin: 0 auto;
+}
+.focus-input-none:focus{
+  box-shadow: none !important;
+}
 /* Scrollbar CSS */
 html *::-webkit-scrollbar {
     border-radius: 0;
+    height: 8px;
     width: 8px;
 }
 
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.15);
+    background: linear-gradient(
+            90deg,
+            rgb(139, 151, 163) 0%,
+            rgb(160, 229, 236) 100%
+        );
 }
 
 html *::-webkit-scrollbar-track {
     border-radius: 0;
+    width: 10px;
     background-color: rgba(0, 0, 0, 0);
 }
 @media (min-width: 570px) {

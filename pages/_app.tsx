@@ -1,12 +1,20 @@
 import "../styles/globals.css";
-import { MyAppProps } from "~/pages/components/layout/types";
-import { Layouts } from "~/pages/components/layout/Layouts";
-function MyApp({ Component, pageProps }: MyAppProps) {
+import { SessionProvider } from "next-auth/react"
+import { Provider } from "react-redux";
+
+import { store } from "~/Redux/store";
+import { MyAppProps } from "~/layout/types";
+import { Layouts } from "~/layout/Layouts";
+function App({ Component, pageProps }: MyAppProps, { session }: any) {
   const Layout = Layouts[Component.Layout] ?? ((page: any) => page);
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    // <Provider store={store}>
+    <SessionProvider session={session}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      {/* // </Provider> */}
+    </SessionProvider >
   );
 }
-export default MyApp;
+export default App;

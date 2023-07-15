@@ -1,11 +1,11 @@
 import React, { PropsWithChildren } from "react";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
+import Header from "~/components/common/Header";
+import Footer from "~/components/common/Footer";
 const DefaultLayout = ({ children }: PropsWithChildren) => {
         return (
                 <>
                         <Header />
-                        <main className="mt-[64px]">
+                        <main className="w-full min-h-screen">
                                 {children}
                         </main>
                         <Footer />
